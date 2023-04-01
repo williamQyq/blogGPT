@@ -7,7 +7,12 @@ This project is designed for individuals seeking to advance their careers to rec
 ## To Begin
 1. ### `npm start` 
    Move to the server and client/bloggpt directories and install dependecies.
-2. `npm run start:dev` <br />Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. `npm run dev` <br />Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Important Note
+PowerShell script execution might is disabled on your system and prevent you to use `ts-node`. To fix this, you can do this by opening PowerShell as an administrator and running the following command:
+
+`Set-ExecutionPolicy RemoteSigned`
 
 ### Deployment
 
