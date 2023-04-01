@@ -1,0 +1,7 @@
+{
+    "db": {},
+    "origin": {
+        "prod": "https://willwows.blog/",
+        "dev": "http://localhost:3000/"
+    }
+}
