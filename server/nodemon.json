@@ -2,6 +2,6 @@
     "watch": [
         "."
     ],
-    "ext": ".ts,.js",
-    "exec": "ts-node-esm ./index.ts"
+    "ext": ".ts",
+    "exec": "node --no-warnings --experimental-specifier-resolution=node --loader ./loader.js index.ts"
 }

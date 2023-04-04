@@ -4,21 +4,23 @@
   "description": "Personal blog sharing platform",
   "main": "index.ts",
   "scripts": {
-    "dev": "set NODE_ENV=development&& concurrently \" nodemon\" \"npm run client\"",
-    "prod": "set NODE_ENV=production&& ts-node-esm ./index.ts",
-    "clean": "rimraf node_modules package-lock.json",
-    "client": "cd ../client/bloggpt && set PORT=3001 && npm start"
+    "dev": "concurrently \" nodemon\" \"npm run client\"",
+    "prod": "node --no-warnings --experimental-specifier-resolution=node --loader ./loader.js index.ts",
+    "server": "nodemon",
+    "client": "cd ../client/bloggpt && set PORT=3001 && npm start",
+    "clean": "rimraf node_modules package-lock.json"
   },
   "keywords": [
     "blog",
     "gpt",
     "machine learning"
   ],
-  "author": "w,Judy",
+  "author": "w",
   "license": "MIT",
   "dependencies": {
     "@types/config": "^3.3.0",
     "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.17",
     "@types/express-session": "^1.17.7",
     "@types/node": "^18.8.3",
@@ -35,13 +37,13 @@
     "passport": "^0.6.0",
     "puppeteer": "^18.2.1",
     "socket.io": "^4.6.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "concurrently": "^8.0.1",
     "nodemon": "^2.0.20",
-    "rimraf": "^4.4.1"
+    "rimraf": "^4.4.1",
+    "typescript": "^4.8.4"
   },
   "type": "module"
 }

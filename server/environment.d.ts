@@ -8,7 +8,8 @@ declare global {
             GOOGLE_CLIENT_ID: string;
             GOOGLE_CLIENT_SECRET: string;
             GOOGLE_CALLBACK_URL: string;
-            DB_URI: string
+            MONGO_URI: string;
+            ORIGIN: string;
         }
     };
     namespace Express {

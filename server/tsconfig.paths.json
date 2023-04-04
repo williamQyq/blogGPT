@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*":["*"],
+            "@api/*": [
+                "lib/api/*"
+            ],
+            "@models/*": [
+                "lib/models/*"
+            ],
+            "~/*": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,14 @@
+//tsconfig.paths.json
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@view/*": [
+        "component/*"
+      ],
+      "@control/*": [
+        "controller/control/*"
+      ]
+    }
+  }
+}
