@@ -10,6 +10,7 @@ declare global {
             GOOGLE_CALLBACK_URL: string;
             MONGO_URI: string;
             ORIGIN: string;
+            PORT: number;
         }
     };
     namespace Express {

@@ -3,5 +3,5 @@
         "."
     ],
     "ext": ".ts",
-    "exec": "node --no-warnings --experimental-specifier-resolution=node --loader ./loader.js index.ts"
+    "exec": "node --experimental-specifier-resolution=node --loader ./loader.js index.ts"
 }

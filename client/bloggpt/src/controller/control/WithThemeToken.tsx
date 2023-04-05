@@ -3,12 +3,14 @@ import { theme } from 'antd';
 import { GlobalToken } from 'antd/es/theme';
 
 
+type ComponentWithToken = React.ComponentType<{ token: GlobalToken } & any>;
+
 /**
  * 
  * @description antd theme token
  * @returns 
  */
-const withToken = (Component: React.ComponentType<{ token: GlobalToken }>) => {
+const withToken = (Component: ComponentWithToken) => {
     return () => {
         const { token } = theme.useToken();
         return <Component token={token} />;

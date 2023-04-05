@@ -7,6 +7,7 @@ import config from 'config';
 import passport from 'passport';
 import mongoose from 'mongoose';
 import { Server, Socket } from 'socket.io';
+import http from 'http';
 
 //api routers...
 import authRouter from "@api/auth.router";
@@ -20,21 +21,23 @@ app.use(cors({
         config.get<string>("origin.dev")
 }));
 
-app.use(express.json());    //parse incoming JSON data and converts it to JS object which is then attached to req.body.
 
 //http server...
-const port = process.env.PORT || 5500;
-const server = app.listen(port, () => {
+const port: number = process.env.PORT || 5500;
+const server: http.Server = app.listen(port, () => {
     console.log(`Server started on port ${port}...`);
 })
 
 //create session middleware for oauth verification
-app.use(session({
+const options: session.SessionOptions = {
     secret: "SESSION_SECRETE",
     resave: false,
     saveUninitialized: false,
     cookie: { secure: process.env.NODE_ENV === 'production' }
-}));
+}
+
+app.use(express.json());    //parse incoming JSON data and converts it to JS object which is then attached to req.body.
+app.use(session(options as session.SessionOptions));
 
 //passport middleware...
 app.use(passport.initialize());
@@ -55,7 +58,7 @@ io.on('connection', (socket: Socket) => {
 });
 
 mongoose.set('strictQuery', false);
-mongoose.connect(process.env.MONGO_URI as string)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("Atlas MongoDB Connected..."))
     .catch((err: mongoose.Error) => console.error("***Atlas MongoDB Error: ***\n", err.message));
 

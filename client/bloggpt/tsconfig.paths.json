@@ -1,4 +1,3 @@
-//tsconfig.paths.json
 {
   "compilerOptions": {
     "baseUrl": "./src",
@@ -8,7 +7,14 @@
       ],
       "@control/*": [
         "controller/control/*"
-      ]
+      ],
+      "@redux-action/*": [
+        "controller/actions/*"
+      ],
+      "@redux-reducer/*": [
+        "controller/reducers/*"
+      ],
+      "@src/*":["*"]
     }
   }
 }

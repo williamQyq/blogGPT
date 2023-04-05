@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { css } from '@emotion/css';
 import { GlobalToken } from 'antd/lib/theme/interface';
 import withToken from '@control/WithThemeToken';
+import { IAuthenticationState } from '@redux-reducer/auth.reducer';
 
 const iconStyles: CSSProperties = {
     color: 'rgba(0, 0, 0, 0.2)',
@@ -33,15 +34,9 @@ const oAuthStyles: CSSProperties = {
 interface IProLoginState {
 
 }
-interface IReduxAuthState {
-    isAuthenticated: boolean
-}
 
-
-interface IProLoginProps {
-    // auth: IReduxAuthState,
+interface IProLoginProps extends IAuthenticationState {
     token: GlobalToken
-    // navigate: (path: string, option: {}) => void
     // loadUser: () => Promise<any>;
 }
 
@@ -107,7 +102,7 @@ class ProLogin extends React.Component<IProLoginProps, IProLoginState>{
                         logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
                         title="Welcome to BlogHub"
                         submitter={{ render: false }}
-                        subTitle="a hub made for love and knowledge share💜"
+                        subTitle="A hub built to share love and knowledge.💜"
                         actions={
                             < div
                                 style={{

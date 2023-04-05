@@ -1,6 +1,13 @@
+//react path alias...
 const { CracoAliasPlugin } = require("react-app-alias");
 
 module.exports = {
+    // //@desc: ~ alias does not work... 
+    // webpack: {
+    //     alias: {
+    //         '~': path.resolve(__dirname, 'src')
+    //     }
+    // },
     plugins: [
         {
             plugin: CracoAliasPlugin,
