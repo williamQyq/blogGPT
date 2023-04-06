@@ -89,17 +89,36 @@ class ProLogin extends React.Component<IProLoginProps, IProLoginState>{
                 <Navigate to={'/dashboard'} replace={true} />
             ) : (
                 <div className={css`
-                    height: 100vh;
+                    .ant-pro-form-login-page{
+                        background-position: left;
+                        background-repeat: no-repeat;
+                        @media (max-width: 940px){
+                            background: none!important;
+                            flex-direction: column-reverse;
+                        }
+                        @media (min-width: 1500px){
+                            background-size: auto;
+                        }
+                    }
                     .ant-pro-form-login-page-container{
+                        display:flex;
                         background: ${token!.colorBgContainer};
+                        @media (min-width: 940px)
+                        padding-inline: 0;
+                        padding-block-start: 128px;
+                        padding-block-end: 24px;
+                        background-repeat: no-repeat;
+                        background-position: center 110px;
+                        background-size: 100%;
                     }
                     .ant-pro-form-login-page-title{
-                        color:${token!.colorText}
+                        color:${token!.colorText};
                     }
                 `}>
                     <LoginFormPage
-                        backgroundImageUrl="https://gw.alipayobjects.com/zos/rmsportal/FfdJeJRQWjEeGTpqgBKj.png"
-                        logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
+                        style={{ height: "100vh" }}
+                        backgroundImageUrl="https://images-rocky-public.s3.amazonaws.com/blogGPT/bg2.png"
+                        logo="https://images-rocky-public.s3.amazonaws.com/blogGPT/bg-icon.png"
                         title="Welcome to BlogHub"
                         submitter={{ render: false }}
                         subTitle="A hub built to share love and knowledge.💜"

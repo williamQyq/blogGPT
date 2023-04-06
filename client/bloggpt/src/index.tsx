@@ -5,7 +5,6 @@ import reduxStore from './controller/redux-store/store';
 import persistStore from 'redux-persist/es/persistStore';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-
 const persister = persistStore(reduxStore);
 
 const root = ReactDOM.createRoot(

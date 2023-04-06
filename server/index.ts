@@ -1,5 +1,5 @@
 "use strict";
-import express from 'express';
+import express, { Request, Response } from 'express';
 import session from 'express-session';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -8,6 +8,7 @@ import passport from 'passport';
 import mongoose from 'mongoose';
 import { Server, Socket } from 'socket.io';
 import http from 'http';
+import path from 'path';
 
 //api routers...
 import authRouter from "@api/auth.router";
@@ -45,6 +46,13 @@ app.use(passport.session());
 
 //routers...
 app.use('/api/auth', authRouter);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.resolve(__dirname, '../client/bloggpt/build')));
+    app.get('*', (req: Request, res: Response) => {
+        res.sendFile(path.resolve(__dirname, '../client/bloggpt', 'build', 'index.html'));
+    });
+}
 
 //socket io server for direct communication sent from server to client
 const io = new Server(server);

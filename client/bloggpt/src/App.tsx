@@ -5,7 +5,6 @@ import ProLoginView from './component/Login/ProLogin.view';
 import PrivateRouteControl from './controller/control/PrivateRoute.control';
 
 function App() {
-
   return (
     <Router>
       < Routes >
