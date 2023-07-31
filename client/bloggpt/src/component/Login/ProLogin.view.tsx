@@ -97,7 +97,7 @@ class ProLogin extends React.Component<IProLoginProps, IProLoginState>{
                             flex-direction: column-reverse;
                         }
                         @media (min-width: 1500px){
-                            background-size: auto;
+                            background-size: cover;
                         }
                     }
                     .ant-pro-form-login-page-container{

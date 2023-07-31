@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/prompt/{promptString}": {
+      "name": "/prompt/{promptString}",
+      "lambdaFunction": "promptHandler",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
