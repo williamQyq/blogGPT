@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/promptString/{string}": {
+      "name": "/promptString/{string}",
+      "lambdaFunction": "bloggptb0fd3b64",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
